@@ -135,7 +135,7 @@ def ask_q2(token):
     ))
 
 # ตัวอย่าง ask_q3 ปรับใหม่
-ddef ask_q3(token):
+def ask_q3(token):
     line_bot_api.reply_message(token, TextSendMessage(
         "Q3: จุดเด่นของผลงานตรงกับข้อใดมากที่สุด?",
         quick_reply=qr([
