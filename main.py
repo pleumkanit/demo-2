@@ -55,11 +55,12 @@ def on_text(event):
     if text.lower() in ["เริ่ม","เริ่มใหม่","reset"]:
         reset(uid); ask_q1(event.reply_token); return
     if uid not in user_state:
-        reset(uid); ask_q1(event.reply_token); return
-    line_bot_api.reply_message(event.reply_token,
-        message = TextSendMessage(
+    reset(uid); ask_q1(event.reply_token); return
+
+message = TextSendMessage(
     text="โปรดเลือกจากปุ่มที่กำหนด หรือพิมพ์ 'เริ่ม' เพื่อเริ่มใหม่"
 )
+line_bot_api.reply_message(event.reply_token, message)
 
 @handler.add(PostbackEvent)
 def on_postback(event):
