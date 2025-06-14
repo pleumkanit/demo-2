@@ -135,22 +135,20 @@ def ask_q2(token):
     ))
 
 # ตัวอย่าง ask_q3 ปรับใหม่
-def ask_q3(token):
-    line_bot_api.reply_message(
-        token,
-        TextSendMessage(
-            "Q3: จุดเด่นของผลงานตรงกับข้อใดมากที่สุด?",
-            quick_reply=qr([
-                ("สร้างนวัตกรรมใหม่","C1"),
-                ("ต่อยอด/ขยายผล",   "C2"),
-                ("บูรณาการดิจิทัล",  "C3"),
-                ("แก้ Pain-Point",    "C4"),
-                ("เร็ว-ง่าย-โปร่งใส", "C5"),
-                ("ผลกระทบชาติ",     "C6"),
-                ("ให้ ปชช. ร่วมตัดสิน","C7")
-            ])
-        )
-    )
+ddef ask_q3(token):
+    line_bot_api.reply_message(token, TextSendMessage(
+        "Q3: จุดเด่นของผลงานตรงกับข้อใดมากที่สุด?",
+        quick_reply=qr([
+            ("นวัตกรรมใหม่","C1"),          
+            ("ขยายผลรางวัลเดิม","C2"),      
+            ("บูรณาการดิจิทัล","C3"),        
+            ("แก้ Pain Point","C4"),          
+            ("ลดขั้นตอน/โปร่งใส","C5"),      
+            ("Agenda Impactสูง","C6"),        
+            ("ปชช.ร่วมตัดสินใจ","C7")        
+        ])
+    ))
+
 
 def reply_done(token, msg):
     line_bot_api.reply_message(
