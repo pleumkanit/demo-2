@@ -57,7 +57,9 @@ def on_text(event):
     if uid not in user_state:
         reset(uid); ask_q1(event.reply_token); return
     line_bot_api.reply_message(event.reply_token,
-        TextSendMessage("โปรดเลือกจากปุ่มที่กำหนด หรือพิมพ์ "เริ่ม" เพื่อเริ่มใหม่"))
+        message = TextSendMessage(
+    text="โปรดเลือกจากปุ่มที่กำหนด หรือพิมพ์ 'เริ่ม' เพื่อเริ่มใหม่"
+)
 
 @handler.add(PostbackEvent)
 def on_postback(event):
